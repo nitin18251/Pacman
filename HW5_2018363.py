@@ -175,6 +175,4 @@ background.fill((0,0,255))
 coin_pos=[]# randomly genrated coin positions
 for i in range(20):
 	coin_pos.append((randint(1,18),randint(1,18)))
-
 pacman_intro()
-#gameloop()
