@@ -1,9 +1,7 @@
-import pygame
+import pygame,time,pygame_textinput
 from pygame.locals import *
 from numpy import loadtxt
-import time
 from random import randint
-import pygame_textinput
 
 #Constants for the game
 WIDTH, HEIGHT = (60, 60)
@@ -98,7 +96,6 @@ def username_input():#creating a window in pygame to take input from user
 	textinput = pygame_textinput.TextInput()
 	while True:
 		screen.fill(white)
-
 		events = pygame.event.get()
 		for event in events:
 			if event.type == pygame.QUIT:
@@ -108,7 +105,6 @@ def username_input():#creating a window in pygame to take input from user
 					return textinput.get_text()
 		textinput.update(events)
 		screen.blit(textinput.get_surface(), (10, 10))
-
 		pygame.display.update()
 		clock.tick(30)
 
@@ -179,7 +175,6 @@ def gameloop(user):
 				game_over(count,Start_time,user)
 
 		score(count,Start_time,user)#updating of score and time
-
 		pygame.display.update()
 		time.sleep(0.1)
 		if len(coin_pos)==0:#if all the coins are over then game over
